@@ -14,7 +14,7 @@ def load_model():
         model = joblib.load("../model/classifier.pkl")
         return model
     except FileNotFoundError:
-        st.error("\U0001F6A8 분류 모델(classifier.pkl)을 찾을 수 없습니다. 'model/' 폴더에 저장해 주세요.")
+        st.error("\U0001F6A8 분류 모델(classifier.pkl)을 찾을 수 없습니다. '..model/' 폴더에 저장해 주세요.")
         return None
 
 model = load_model()
