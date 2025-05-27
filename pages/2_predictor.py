@@ -11,10 +11,10 @@ st.title("🤖 불량 예측 시리워")
 
 def load_model():
     try:
-        model = joblib.load("../model/classifier.pkl")
+        model = joblib.load("../model/random_forest_model.pkl")
         return model
     except FileNotFoundError:
-        st.error("\U0001F6A8 분류 모델(classifier.pkl)을 찾을 수 없습니다. '..model/' 폴더에 저장해 주세요.")
+        st.error("\U0001F6A8 분류 모델(random_forest_model.pkl)을 찾을 수 없습니다. '..model/' 폴더에 저장해 주세요.")
         return None
 
 model = load_model()

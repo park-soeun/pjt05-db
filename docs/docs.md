@@ -86,7 +86,7 @@
 pjt05/
 ├── app.py               ← Streamlit 메인 앱
 ├── model/
-│   ├── classifier.pkl   ← 학습된 모델
+│   ├── random_forest_model.pkl   ← 학습된 모델
 │   ├── shap_values.npy  ← SHAP 값 저장
 ├── data/
 │   ├── train.csv

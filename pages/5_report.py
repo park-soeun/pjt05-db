@@ -20,9 +20,9 @@ def load_data():
 
 def load_model():
     try:
-        return joblib.load("../model/classifier.pkl")
+        return joblib.load("../model/random_forest_model.pkl")
     except:
-        st.error("../model/classifier.pkl 파일을 찾을 수 없습니다.")
+        st.error("../model/random_forest_model.pkl 파일을 찾을 수 없습니다.")
         return None
 
 df = load_data()
@@ -55,7 +55,7 @@ if df is not None and model:
     st.pyplot(fig2)
 
     st.markdown("### ▶️ 모델 저장")
-    with open("../model/classifier.pkl", "rb") as f:
-        st.download_button("파일 다운로드", f, file_name="classifier.pkl")
+    with open("../model/random_forest_model.pkl", "rb") as f:
+        st.download_button("파일 다운로드", f, file_name="random_forest_model.pkl")
 else:
     st.warning("모델 또는 train.csv 데이터를 로드할 수 없습니다.")

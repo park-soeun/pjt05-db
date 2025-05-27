@@ -11,9 +11,9 @@ st.title("\U0001f50d 예측 결과 및 변수 영향도 분석")
 # --- 모델 및 샘플 로딩 ---
 def load_model():
     try:
-        return joblib.load("../model/classifier.pkl")
+        return joblib.load("../model/random_forest_model.pkl")
     except:
-        st.error("classifier.pkl 파일을 \\\"../model/\\\" 폴더에 저장해주세요.")
+        st.error("random_forest_model.pkl 파일을 \\\"../model/\\\" 폴더에 저장해주세요.")
         return None
 
 @st.cache_data
@@ -22,7 +22,7 @@ def load_data():
     try:
         return pd.read_csv("../data/train.csv")
     except:
-        st.error("classifier.pkl 파일을 \\\"../model/\\\" 폴더에 저장해주세요.")
+        st.error("random_forest_model.pkl 파일을 \\\"../model/\\\" 폴더에 저장해주세요.")
         return None
 
 model = load_model()
@@ -50,4 +50,4 @@ if model and data is not None:
     st.pyplot(fig)
 
 else:
-    st.info("모델과 학습 데이터를 먼저 확인해주세요. \\n필요한 파일: '../model/classifier.pkl', '..data/train.csv'")
+    st.info("모델과 학습 데이터를 먼저 확인해주세요. \\n필요한 파일: '../model/random_forest_model.pkl', '..data/train.csv'")
